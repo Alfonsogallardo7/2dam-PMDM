@@ -9,6 +9,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
 import { TableComponent } from './table/table.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 
 
@@ -25,7 +27,8 @@ import { TableComponent } from './table/table.component';
     BrowserAnimationsModule,
     MatIconModule,
     MatToolbarModule,
-    MatTableModule
+    MatTableModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

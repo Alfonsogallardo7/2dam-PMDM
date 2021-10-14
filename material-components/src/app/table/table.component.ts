@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { NgModel } from '@angular/forms';
 
 export interface PeriodicElement {
   name: string;
@@ -27,13 +29,23 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./table.component.css']
 })
 
+
 export class TableComponent implements OnInit {
   displayedColumns: string[] = ['demo-position' , 'demo-nombre', 'demo-apellidos', 'demo-curso', 'demo-edad', 'demo-Actions'];
     dataSource = ELEMENT_DATA;
+    checked = false;
+  indeterminate = false;
+  labelPosition: 'before' | 'after' = 'after';
+  disabled = false;
   
     ngOnInit(): void {
     }
+
+    mostrarColumna() {
+    }
 }
+
+
 
 
 
