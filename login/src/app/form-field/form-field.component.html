@@ -1,3 +1,9 @@
+<div class="username">
+  <mat-form-field appearance="fill">
+    <mat-label>Inserte su username</mat-label>
+    <input matInput required>
+  </mat-form-field>
+</div>
 <div class="email">
     <mat-form-field appearance="fill">
       <mat-label>Inserte su email</mat-label>
@@ -5,7 +11,7 @@
       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
 </div>
-<div>
+<div class="password">
     <mat-form-field appearance="fill">
         <mat-label>Inserte su contraseña</mat-label>
         <input matInput [type]="hide ? 'password' : 'text'" required>
