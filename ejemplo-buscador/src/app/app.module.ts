@@ -7,6 +7,8 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { MaterialImportsModule } from './material-imports/material-imports.module';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import {MatButtonModule} from '@angular/material/button';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    MaterialImportsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

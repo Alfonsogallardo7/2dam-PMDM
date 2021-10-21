@@ -9,6 +9,7 @@ import { PokemonService } from '../services/pokemon.service';
 })
 export class PokemonListComponent implements OnInit {
   pokemonList: Pokemon[] | undefined;
+  pokemonNumberSelected = '50'; 
 
   constructor(private pokemonService: PokemonService) {}
 
@@ -21,5 +22,12 @@ export class PokemonListComponent implements OnInit {
     this.pokemonList = resultado.results
       console.log(resultado);
   });
+  }
+
+  getPokemonList() {
+    this.pokemonService.getPokemonList(parseInt(this.pokemonNumberSelected)).subscribe( resultado => {
+      this.pokemonList = resultado.results;
+      console.log(resultado);
+    });
   }
 }
