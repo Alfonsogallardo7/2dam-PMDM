@@ -31,6 +31,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 export class TableComponent implements OnInit {
+  displayedOriginalColumns: string[] = ['demo-position' , 'demo-nombre', 'demo-apellidos', 'demo-curso', 'demo-edad', 'demo-Actions'];
   displayedColumns: string[] = ['demo-position' , 'demo-nombre', 'demo-apellidos', 'demo-curso', 'demo-edad', 'demo-Actions'];
     dataSource = ELEMENT_DATA;
     checked = false;
@@ -41,8 +42,15 @@ export class TableComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    mostrarColumna() {
-    }
+  checkboxChange(isChecked: boolean){
+   if(isChecked){
+     this.displayedColumns.splice(this.displayedOriginalColumns.indexOf('demo-nombre'),0);
+   } else {
+     let orginalIndex = this.displayedColumns.indexOf('demo-nombre');
+     //let indexToAdd = orginalIndex > this.displayedColumns.length?
+     this.displayedColumns.splice(this.displayedColumns.indexOf('demo-nombre'),1);
+   }
+  }
 }
 
 
