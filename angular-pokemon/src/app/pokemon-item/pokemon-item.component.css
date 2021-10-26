@@ -1,0 +1,18 @@
+.mat-card{
+    width: 10%;
+    height: 250px;
+    background-color:rgb(220, 220, 228) ;
+    margin-bottom: 20px;
+}
+
+.mat-card-subtitle{
+    color: black;
+    text-align: center;
+    
+}
+
+.mat-card:hover{
+    background-color: burlywood;
+}
+
+
