@@ -11,6 +11,7 @@ import { MoviesPopularListComponent } from './components/movies-popular-list/mov
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { PersonItemComponent } from './components/person-item/person-item.component';
 import { PersonPopularListComponent } from './components/person-popular-list/person-popular-list.component';
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PersonPopularListComponent } from './components/person-popular-list/per
     MoviesPopularListComponent,
     MovieItemComponent,
     PersonItemComponent,
-    PersonPopularListComponent
+    PersonPopularListComponent,
+    SideMenuComponent
   ],
   imports: [
     BrowserModule,
