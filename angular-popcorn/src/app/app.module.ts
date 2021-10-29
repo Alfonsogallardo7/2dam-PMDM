@@ -12,6 +12,7 @@ import { MovieItemComponent } from './components/movie-item/movie-item.component
 import { PersonItemComponent } from './components/person-item/person-item.component';
 import { PersonPopularListComponent } from './components/person-popular-list/person-popular-list.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import { DialogMovieDetailComponent } from './components/dialog-movie-detail/dialog-movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
     MovieItemComponent,
     PersonItemComponent,
     PersonPopularListComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    DialogMovieDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,11 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
     MaterialImportsModule,
     HttpClientModule
   ],
+
+  entryComponents: [
+    DialogMovieDetailComponent
+  ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

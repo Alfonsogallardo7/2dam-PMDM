@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Person } from 'src/app/models/interfaces/person-popular.interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-person-item',
@@ -12,6 +13,10 @@ export class PersonItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getPersonImageUrl(person: Person) {
+    return `${environment.imageBaseUrl}${person.profile_path}`;
   }
 
 }
