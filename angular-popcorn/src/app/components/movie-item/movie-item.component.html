@@ -2,5 +2,11 @@
     <mat-card-content>
         <img [src]="getMovieImageUrl(movieInput)" height="200px" />
         <h3>{{movieInput.title}}</h3>
+
+        <section>
+            <div class="button-row">
+              <button (click)="openDialogMovieDetail()" mat-raised-button color="primary">Details</button>
+            </div>
+          </section>
     </mat-card-content>
 </mat-card>
