@@ -1,0 +1,10 @@
+<ng-container *ngIf="movie">
+    <h1 mat-dialog-title>Movie Detail</h1>
+    <div mat-dialog-content>
+
+        <img [src]="getMovieImg()" width="100px" />
+
+        <h2>{{movie?.title}}</h2>
+        <p>{{movie?.overview}}</p>
+    </div>
+</ng-container>
