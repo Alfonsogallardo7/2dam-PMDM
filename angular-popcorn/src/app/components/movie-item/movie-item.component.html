@@ -1,7 +1,9 @@
 
 <mat-card style="width: 200px;">
     <mat-card-content>
-        <img [src]="getMovieImageUrl(movieInput)" height="200px" width="100%" style="border-radius: 5%;"/>
+        <div class="movie-image">
+            <img [src]="getMovieImageUrl(movieInput)" height="200px" width="100%" style="border-radius: 5%;"/>
+        </div>
         <h3 style="font-weight: bold; 
         text-overflow: ellipsis;
         overflow: hidden;
@@ -10,17 +12,25 @@
             overflow: hidden;
             white-space: nowrap;"> {{movieInput.overview}}</p>
           
-          <circle-progress
+          <circle-progress class="movie-rate"
+          [title]="(movieInput.vote_average*10).toString()"
           [percent]="movieInput.vote_average*10"
           [radius]="15"
           [outerStrokeWidth]="2"
-          [innerStrokeWidth]="1"
+          [innerStrokeWidth]="0"
           [outerStrokeColor]="'#78C000'"
           [innerStrokeColor]="'#C7E596'"
           [animation]="true"
           [animationDuration]="300"
           [backgroundColor]="'black'"
+          [showSubtitle]="false"
+          [titleFontSize]="'90%'"
+          [titleColor]="'white'"
         
         ></circle-progress>
     </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-icon-button aria-label="Example icon button with a heart icon"><mat-icon>favorite_border</mat-icon></button>
+        <button mat-icon-button aria-label="Example icon button with a heart icon"><mat-icon>playlist_add</mat-icon></button>
+    </mat-card-actions>
 </mat-card>

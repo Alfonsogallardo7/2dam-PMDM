@@ -1,4 +1,6 @@
-
+.scroll-container {
+    padding: block;
+}
 
 .movie-item {
     min-width: 200px;
