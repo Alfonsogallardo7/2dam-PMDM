@@ -1,0 +1,13 @@
+<ng-container *ngIf="movie" >
+    <div style="text-align: center; margin-bottom: 5%;">
+        <h1 mat-dialog-title>{{movie?.title}}</h1>
+        <img [src]="getMovieImg()" width="100px" />
+    </div>
+    <mat-form-field appearance="fill">
+        <mat-label>Select List</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+      </mat-form-field>
+</ng-container>

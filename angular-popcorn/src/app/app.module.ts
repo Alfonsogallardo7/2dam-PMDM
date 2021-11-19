@@ -11,12 +11,15 @@ import { MoviesPopularListComponent } from './components/movies-popular-list/mov
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { DialogMovieListComponent } from './components/dialog-movie-list/dialog-movie-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesPopularListComponent,
-    MovieItemComponent
+    MovieItemComponent,
+    DialogMovieListComponent
+
   ],
   imports: [
     BrowserModule,
