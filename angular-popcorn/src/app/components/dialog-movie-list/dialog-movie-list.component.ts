@@ -1,10 +1,14 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { ListLoginDto } from 'src/app/models/dto/list.dto';
+import { List, ListResponse } from 'src/app/models/interfaces/list.interface';
 import { MovieResponse } from 'src/app/models/interfaces/movie.interface';
+import { AuthService } from 'src/app/services/auth.service';
 import { MoviesService } from 'src/app/services/movies.service';
 import { environment } from 'src/environments/environment';
 
-export interface DialogMovieListData{
+export interface DialogMovieListData {
   movieId: string;
 }
 @Component({
@@ -13,22 +17,32 @@ export interface DialogMovieListData{
   styleUrls: ['./dialog-movie-list.component.css']
 })
 export class DialogMovieListComponent implements OnInit {
-  movie!:MovieResponse;
+  movie!: MovieResponse;
+  movieList: List[] = [];
+  listLoginDto = new ListLoginDto();
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private data: DialogMovieListData,
-    private moviesService: MoviesService
+    private moviesService: MoviesService,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
-    console.log(this.data.movieId)
+    console.log(this.data.movieId);
     this.moviesService.getMovie(this.data.movieId).subscribe(moviesResponse => {
       this.movie = moviesResponse;
     });
+
+    this.authService.getList().subscribe(listResponse => {
+      this.movieList = listResponse.results;
+    })
+  }
+
+  addListMovie(){
+    this.authService.createdList(this.listLoginDto).subscribe();
   }
 
   getMovieImg(): string {
-    return `${environment.imageBaseUrl}${this.movie.poster_path}`
+    return `${environment.imageBaseUrl}${this.movie.poster_path}`;
   }
-
 }

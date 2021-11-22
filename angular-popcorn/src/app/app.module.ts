@@ -12,13 +12,18 @@ import { MovieItemComponent } from './components/movie-item/movie-item.component
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { DialogMovieListComponent } from './components/dialog-movie-list/dialog-movie-list.component';
+import { DialogLoginComponent } from './components/dialog-login/dialog-login.component';
+import { SessionComponent } from './shared/session/session.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesPopularListComponent,
     MovieItemComponent,
-    DialogMovieListComponent
+    DialogMovieListComponent,
+    DialogLoginComponent,
+    SessionComponent
 
   ],
   imports: [
@@ -28,6 +33,7 @@ import { DialogMovieListComponent } from './components/dialog-movie-list/dialog-
     MaterialImportsModule,
     HttpClientModule,
     FlexLayoutModule,
+    FormsModule,
     NgCircleProgressModule.forRoot({
       radius: 100,
       outerStrokeWidth: 16,

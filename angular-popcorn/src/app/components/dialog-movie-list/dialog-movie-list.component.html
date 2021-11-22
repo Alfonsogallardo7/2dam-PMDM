@@ -6,8 +6,18 @@
     <mat-form-field appearance="fill">
         <mat-label>Select List</mat-label>
         <mat-select>
-          <mat-option value="one">First option</mat-option>
-          <mat-option value="two">Second option</mat-option>
+          <mat-option *ngFor="let lista of movieList" [value]="lista.id">{{lista.name}}</mat-option>
         </mat-select>
       </mat-form-field>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Write your list name" [(ngModel)]="listLoginDto.name" name="name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Write your description" [(ngModel)]="listLoginDto.description" name="Description">
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="addListMovie()">Create</button>
+      </form>
 </ng-container>

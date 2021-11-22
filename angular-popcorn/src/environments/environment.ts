@@ -7,7 +7,8 @@ export const environment = {
   apiBaseUrl: 'https://api.themoviedb.org/3',
   apiKey: 'd64edfd74101230753aa7b2393ffe8df', // Debo introducir mi API KEY de desarrollador que he obtenido en la web de TheMovieDB API.
   defaultLang: 'es-ES',
-  imageBaseUrl: 'https://image.tmdb.org/t/p/w500'
+  imageBaseUrl: 'https://image.tmdb.org/t/p/w500',
+  session_id: '74201b53f8807576ae14bbfc9016f2c3bacf35cd'
 };
 
 /*
