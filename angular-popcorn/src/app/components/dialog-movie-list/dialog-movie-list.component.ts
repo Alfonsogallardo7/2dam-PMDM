@@ -40,6 +40,7 @@ export class DialogMovieListComponent implements OnInit {
 
   addListMovie(){
     this.authService.createdList(this.listLoginDto).subscribe();
+    console.log(this.data.movieId)
   }
 
   getMovieImg(): string {
