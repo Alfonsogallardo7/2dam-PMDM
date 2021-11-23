@@ -30,7 +30,7 @@
         ></circle-progress>
     </mat-card-content>
     <mat-card-actions align="end">
-        <button mat-icon-button aria-label="Example icon button with a heart icon"><mat-icon>favorite_border</mat-icon></button>
+        <button (click)="addMovieToFavorite()" mat-icon-button aria-label="Example icon button with a heart icon"><mat-icon>favorite_border</mat-icon></button>
         <button (click)="addToPlayList()" mat-icon-button aria-label="Example icon button with a heart icon"><mat-icon>playlist_add</mat-icon></button>
     </mat-card-actions>
 </mat-card>

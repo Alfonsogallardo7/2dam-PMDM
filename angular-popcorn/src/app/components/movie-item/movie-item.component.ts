@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AddMovieDto, ListLoginDto, MarkFavoriteDto } from 'src/app/models/dto/list.dto';
 import { Movie } from 'src/app/models/interfaces/movies-popular.interface';
 import { AuthService } from 'src/app/services/auth.service';
 import { environment } from 'src/environments/environment';
 import { DialogLoginComponent } from '../dialog-login/dialog-login.component';
-import { DialogMovieListComponent } from '../dialog-movie-list/dialog-movie-list.component';
+import { DialogMovieListComponent, DialogMovieListData } from '../dialog-movie-list/dialog-movie-list.component';
 
 @Component({
   selector: 'app-movie-item',
@@ -13,6 +14,10 @@ import { DialogMovieListComponent } from '../dialog-movie-list/dialog-movie-list
 })
 export class MovieItemComponent implements OnInit {
   @Input() movieInput!: Movie;
+  listLoginDto = new ListLoginDto();
+  addMovieDto = new AddMovieDto();
+  markFavoriteDto = new MarkFavoriteDto();
+  select!: number;
 
   constructor(private dialog: MatDialog,
     private authService: AuthService) { }
@@ -38,6 +43,16 @@ export class MovieItemComponent implements OnInit {
     } else {
       this.openLoginDialog();
     }
+  }
+ 
+
+  addMovieToFavorite(){
+    if(this.authService.isLoggedIn()) {
+      this.markFavoriteDto.media_id=this.movieInput.id;
+      this.authService.addMovieToFavorite(this.markFavoriteDto).subscribe();
+    } else {
+      this.openLoginDialog();
+    }   
   }
 
   openLoginDialog() {

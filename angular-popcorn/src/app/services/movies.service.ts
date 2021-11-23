@@ -19,7 +19,7 @@ export class MoviesService {
     return this.http.get<MoviesPopularResponse>(`${movieUrl}/popular?api_key=${environment.apiKey}&language=${environment.defaultLang}`);
   }
 
-  getMovie(id: string) {
+  getMovie(id: number) {
     return this.http.get<MovieResponse>(`${movieUrl}/${id}?api_key=${environment.apiKey}&language=${environment.defaultLang}`);
   }
 }
