@@ -27,6 +27,7 @@ export class RegisterComponent implements OnInit {
 
   doRegister() {
     this.authService.register(this.registerDto).subscribe(registerResponse => {
+      this.authService.setLocalRequestToken(registerResponse.token)
       console.log(registerResponse.token)
     });
   

@@ -16,7 +16,7 @@ export interface User {
     created: Date;
 }
 
-export interface RootObject {
+export interface TwitterResponse {
     id: number;
     mensaje: string;
     likes: Like[];

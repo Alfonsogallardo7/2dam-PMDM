@@ -4,20 +4,21 @@ import { Person } from 'src/app/models/interfaces/people.interface';
 import { PeopleService } from 'src/app/services/people.service';
 
 @Component({
-  selector: 'app-person-list',
-  templateUrl: './person-list.component.html',
-  styleUrls: ['./person-list.component.css']
+  selector: 'app-people-list',
+  templateUrl: './people-list.component.html',
+  styleUrls: ['./people-list.component.css']
 })
-export class PersonListComponent implements OnInit {
+export class PeopleListComponent implements OnInit {
   listarPersonajes: Person[] = [];
   listarPersonajesFiltrados: Person[] = [];
   genderFormControl = new FormControl('');
-  constructor(private peopleServices: PeopleService) { }
+
+  constructor(private peopleService: PeopleService) { }
 
   ngOnInit(): void {
-    this.peopleServices.getPeople().subscribe(popularPersonsResponse => {
-      this.listarPersonajes = popularPersonsResponse.results;
-    });
+    this.peopleService.getPeople().subscribe(peopleResponse => {
+      this.listarPersonajes = peopleResponse.results;
+    })
   }
 
   doFilter() {

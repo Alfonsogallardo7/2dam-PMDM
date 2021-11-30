@@ -29,5 +29,13 @@ export class AuthService {
     let requestUrl = `${this.authBaseUrl}/forgot`;
   }
 
+  setLocalRequestToken(token: string) {
+    localStorage.setItem('request_token', token)
+  }
+
+  getLocalRequestToken(){
+    return localStorage.getItem('request_token');
+  }
+
 
 }

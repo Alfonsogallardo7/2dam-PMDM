@@ -13,6 +13,8 @@ import { PlanetListComponent } from './pages/planet-list/planet-list.component';
 import { PlanetDetailComponent } from './pages/planet-detail/planet-detail.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PersonDetailComponent } from './pages/person-detail/person-detail.component';
+import { PeopleListComponent } from './components/people-list/people-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { PersonDetailComponent } from './pages/person-detail/person-detail.compo
     PlanetItemComponent,
     PlanetListComponent,
     PlanetDetailComponent,
-    PersonDetailComponent
+    PersonDetailComponent,
+    PeopleListComponent
     
   ],
   imports: [
@@ -31,7 +34,8 @@ import { PersonDetailComponent } from './pages/person-detail/person-detail.compo
     MaterialImportsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
